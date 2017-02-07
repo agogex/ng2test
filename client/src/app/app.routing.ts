@@ -5,6 +5,11 @@ import { EditComponent } from './components/edit.component';
 
 export const routing: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'users'
+    },
+    {
         path: 'users',
         component: UserComponent
     },

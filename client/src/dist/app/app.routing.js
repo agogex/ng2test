@@ -4,6 +4,11 @@ var create_component_1 = require("./components/create.component");
 var edit_component_1 = require("./components/edit.component");
 exports.routing = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'users'
+    },
+    {
         path: 'users',
         component: user_component_1.UserComponent
     },
