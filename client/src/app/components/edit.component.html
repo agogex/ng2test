@@ -1,0 +1,40 @@
+<div *ngIf="user">
+  <h1 class="page-header">Edit {{user.firstName}} {{user.lastName}}</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+          <div class="form-group">
+            <label>Company ID</label>
+            <input type="text" name="companyId" formControlName="companyId" class="form-control" placeholder="Company ID" required>
+          </div>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstName" formControlName="firstName" class="form-control" placeholder="First Name" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName" formControlName="lastName" class="form-control" placeholder="Last Name" required>
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <label class="radio-inline"><input type="radio" name="gender" formControlName="gender" value="male" required> Male</label>
+            <label class="radio-inline"><input type="radio" name="gender" formControlName="gender" value="female" required> Female</label>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="role" formControlName="role" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="root">Root</option>
+            </select>
+          </div>
+          <button [disabled]="!form.valid" type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

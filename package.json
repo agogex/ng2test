@@ -1,0 +1,24 @@
+{
+  "name": "ng2test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "mongodb-uri": "^0.9.7",
+    "mongoose": "^4.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "typescript": "^2.1.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:w": "tsc -p client/src/ -w",
+    "start": "concurrently \"npm run build:w\" \"nodemon server.js\""
+  },
+  "author": "",
+  "license": "ISC"
+}

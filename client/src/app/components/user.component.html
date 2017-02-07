@@ -1,0 +1,63 @@
+<h1 class="page-header">Users</h1>
+<div class="row">
+  <div class="col-md-2">
+    <div class="form-group">
+      <label>User Role</label>
+      <select class="form-control" name="filterRole" [(ngModel)]="filterRole">
+        <option value="all">All</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="root">Root</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="form-group">
+      <label>User Gender</label>
+      <select class="form-control" name="filterGender" [(ngModel)]="filterGender">
+        <option value="all">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="form-group">
+      <label>Sorting</label>
+      <select class="form-control" name="filterDirection" [(ngModel)]="filterDirection">
+        <option value="a-z">A - Z</option>
+        <option value="z-a">Z - A</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div *ngIf="users">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let user of users | filter:filterRole:filterGender:filterDirection">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{user.firstName}} {{user.lastName}}
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <i class="fa fa-building" aria-hidden="true"></i> {{user.companyId}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:{{user.email}}">{{user.email}}</a>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-{{user.gender}}" aria-hidden="true"></i> {{user.gender}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> {{user.role}}
+          </li>
+          <li class="list-group-item">
+            <a [routerLink]="['/edit', user._id]" type="button" class="btn btn-primary">Edit</a>
+            <a (click)="delete(user)" type="button" class="btn btn-danger">Delete</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

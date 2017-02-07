@@ -1,0 +1,24 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+.page-header {
+  margin: 20px 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.loader-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-inner > div {
+  background: #337ab7;
+}
