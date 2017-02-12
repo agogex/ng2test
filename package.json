@@ -17,7 +17,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:w": "tsc -p client/src/ -w",
-    "prestart": "tsc -p client/src/",
     "start": "node server.js",
     "postinstall": "cd client && npm install"
   },
