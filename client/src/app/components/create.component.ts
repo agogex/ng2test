@@ -39,6 +39,7 @@ export class CreateComponent implements OnInit {
     }
 
     onSubmit() {
+        this.form.value.email = this.form.value.email.toLowerCase();
         this.uservice.checkEmail(this.form.value.email)
             .subscribe(res => {
                 if (res.message === 'Email is free') {

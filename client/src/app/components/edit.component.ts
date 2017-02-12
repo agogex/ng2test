@@ -20,6 +20,7 @@ export class EditComponent implements OnInit {
     ) { }
 
     onSubmit() {
+        this.form.value.email = this.form.value.email.toLowerCase();
         this.uservice.updateUser(this.user._id, this.form.value)
             .subscribe(() => {
                 this.router.navigate(['/users']);

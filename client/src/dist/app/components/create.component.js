@@ -41,6 +41,7 @@ var CreateComponent = (function () {
     };
     CreateComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.form.value.email = this.form.value.email.toLowerCase();
         this.uservice.checkEmail(this.form.value.email)
             .subscribe(function (res) {
             if (res.message === 'Email is free') {

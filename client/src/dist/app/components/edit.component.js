@@ -21,6 +21,7 @@ var EditComponent = (function () {
     }
     EditComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.form.value.email = this.form.value.email.toLowerCase();
         this.uservice.updateUser(this.user._id, this.form.value)
             .subscribe(function () {
             _this.router.navigate(['/users']);
